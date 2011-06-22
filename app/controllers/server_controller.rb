@@ -127,7 +127,7 @@ class ServerController < ApplicationController
     else
       request = save_checkid_request
       session[:return_to] = proceed_path
-      redirect_to( request.from_trusted_domain? ? login_path : safe_login_path )
+      redirect_to(login_path)
     end
   end
   
