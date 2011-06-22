@@ -54,6 +54,9 @@ class ServerController < ApplicationController
       render_response(checkid_request.answer(false))
     elsif checkid_request.immediate
       render_response(checkid_request.answer(true, nil, identity))
+    elsif current_openid_request.from_trusted_domain?
+      resp = checkid_request.answer(true, nil, identity)
+      render_response(resp)
     else
       redirect_to decide_path
     end
