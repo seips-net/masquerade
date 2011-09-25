@@ -1,11 +1,11 @@
 source :rubygems
 
-gem 'rails', '~> 3.0.7'
+gem 'rails', '~> 3.0.10'
 gem 'ruby-openid', :require => 'openid'
 gem 'ruby-yadis', :require => 'yadis'
 
 group :production do
-  gem 'mysql2'
+  gem 'mysql2', '~> 0.2.13'
 end
 
 group :development do 
